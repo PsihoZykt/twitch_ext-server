@@ -121,7 +121,7 @@ const server = new Hapi.Server(serverOptions);
 let app = express()
 app.use(cors())
 
-app.listen(8081, () => {
+app.listen(process.env.PORT || 8081, () => {
     console.log("started")
 })
 app.post('/color/cycle', colorCycleHandler)
