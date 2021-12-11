@@ -1,0 +1,43 @@
+{
+  "name": "example-extension",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+
+    "axios": "^0.24.0",
+    "color": "^3.0.0",
+    "commander": "^2.15.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "hapi": "^17.2.2",
+    "inert": "^5.1.0",
+    "jsonwebtoken": "^8.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "request": "^2.85.0",
+    "selfsigned": "^1.10.2"
+  },
+  "scripts": {
+    "start": "node services/backend -c \"59a5ov9oawsq4jlwuva9cbcsuq70gd\" -s \"5XolgB8sba5v3Hrds6KRS9dtep4QFKnYpkIIrpDMcrU=\" -o \"47541334\""
+
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
