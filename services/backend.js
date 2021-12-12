@@ -228,10 +228,10 @@ function setCounterHandler (req,res){
     // if (!userIsInCooldown(opaqueUserId)) {
     // throw Boom.tooManyRequests(STRINGS.cooldown);
     console.log(req.body)
-    if(!req.body.counter) {
-        currentCounter = currentCounter + 1
-    } else {
+    if(req.body.counter && Number.isInteger(req.body.counter)) {
         currentCounter = req.body.counter
+    } else {
+        currentCounter = currentCounter + 1
     }
     // Save the new color for the channel.
     channelCounter[channelId] = currentCounter;
