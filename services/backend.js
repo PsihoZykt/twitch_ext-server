@@ -228,6 +228,8 @@ function setCounterHandler (req,res){
     // if (!userIsInCooldown(opaqueUserId)) {
     // throw Boom.tooManyRequests(STRINGS.cooldown);
     console.log(req.body)
+    console.log(req.body.counter)
+    console.log(Number.isInteger(req.body.counter))
     if(req.body && req.body.counter && Number.isInteger(req.body.counter)) {
         currentCounter = req.body.counter
     } else {
