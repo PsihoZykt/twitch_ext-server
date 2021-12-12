@@ -227,6 +227,7 @@ function setCounterHandler (req,res){
     // Bot abuse prevention:  don't allow a user to spam the button.
     // if (!userIsInCooldown(opaqueUserId)) {
     // throw Boom.tooManyRequests(STRINGS.cooldown);
+    console.log(req.body)
     if(!req.body.counter) {
         currentCounter = currentCounter + 1
     } else {
