@@ -121,6 +121,8 @@ const server = new Hapi.Server(serverOptions);
 let app = express()
 app.use(cors())
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.listen(process.env.PORT || 8081, () => {
     console.log("started")
 })
@@ -225,7 +227,11 @@ function setCounterHandler (req,res){
     // Bot abuse prevention:  don't allow a user to spam the button.
     // if (!userIsInCooldown(opaqueUserId)) {
     // throw Boom.tooManyRequests(STRINGS.cooldown);
-    currentCounter = currentCounter+1
+    if(!req.body.counter) {
+        currentCounter = currentCounter + 1
+    } else {
+        currentCounter = req.body.counter
+    }
     // Save the new color for the channel.
     channelCounter[channelId] = currentCounter;
 
